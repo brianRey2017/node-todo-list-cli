@@ -1,11 +1,17 @@
-import "colors";
 import "module-alias/register";
-import { showMenu } from "@helpers/messages";
+import "colors";
+import { pause } from "@helpers/messages";
+import { showMenu } from "@helpers/inputs";
 
 const main = async () => {
-  console.log("====================================");
-  console.log("Hello world");
-  console.log("====================================");
+  let opt = "";
+  do {
+    const { value } = await showMenu();
+    opt = value;
+    if (opt !== "0") {
+      await pause();
+    }
+  } while (opt !== "0");
 };
 
 main();
