@@ -1,17 +1,32 @@
-import { GlobalStore, initDB } from "@lib/database";
-import { ITask, Task } from "@models/Task";
+import { initDB } from "@lib/database";
+import { ITaskListFilter, Task } from "@models/Task";
 
-class TaskRepository {
-  static db = await initDB();
-
-  static createTaks = async (description: string): Promise<Task | void> => {
-    const tasks = new Task(description);
-    console.log(this.db);
+export class TaskRepository {
+  static createTask = async (description: string): Promise<Task> => {
+    const db = await initDB();
+    console.log(db);
+    return new Task(description);
   };
 
-  public static listTasks = async (): Promise<Task[]> => {};
-  public static search = async (): Promise<Task[]> => {};
-  public static show = async (): Promise<Task> => {};
-  public static deleteTask = async (): Promise<void> => {};
+  public static listTasks = async (): Promise<Task[]> => {
+    const { tasks } = await initDB();
+    return tasks;
+  };
+  public static searchTasks = async (
+    filter: ITaskListFilter = {}
+  ): Promise<Task[]> => {
+    const { tasks } = await initDB();
+    return tasks;
+  };
+  public static showTask = async (id: string): Promise<Task> => {
+    const { tasks } = await initDB();
+    return tasks[0];
+  };
+  public static deleteTask = async (id: string): Promise<void> => {
+    const { tasks } = await initDB();
+  };
+  public static completeTask = async (id: string): Promise<void> => {
+    const { tasks } = await initDB();
+  };
 }
 // export const createTask = () => {};

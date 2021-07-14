@@ -1,6 +1,6 @@
 import { generateUUID } from "lib/uuid";
 
-export interface ITask {
+interface ITask {
   completedAt?: string;
   readonly createdAt: string;
   readonly id: string;
@@ -9,6 +9,11 @@ export interface ITask {
 
 export interface ITaskList {
   tasks: ITask[];
+}
+
+export interface ITaskListFilter {
+  complete?: boolean;
+  name?: string;
 }
 
 export class Task implements ITask {
