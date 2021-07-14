@@ -1,9 +1,12 @@
 import "module-alias/register";
 import "colors";
-import { pause } from "@helpers/messages";
-import { showMenu } from "@helpers/inputs";
+import "@lib/cleanExit";
+
+import { pause, showMenu } from "@helpers/inputs";
+import { initDB } from "@lib/database";
 
 const main = async () => {
+  await initDB();
   let opt = "";
   do {
     const { value } = await showMenu();

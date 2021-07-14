@@ -1,26 +1,30 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "sourceMap": true,
-    "outDir": "./build",
-    "rootDir": "./src",
-    /* Strict Type-Checking Options */
-    "strict": true,
-    "noImplicitAny": true,
-    /* Module Resolution Options */
-    "moduleResolution": "node",
     "baseUrl": "./src",
     "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "commonjs",
+
+    /* Module Resolution Options */
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "outDir": "./build",
+    "paths": {
+      "@helpers/*": ["helpers/*"],
+      "@lib/*": ["lib/*"],
+      "@models/*": ["models/*"]
+    },
+    "rootDir": "./src",
+
     /* Advanced Options */
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "paths": {
-      "@models/*": ["models/*"],
-      "@helpers/*": ["helpers/*"]
-    }
+    "sourceMap": true,
+
+    /* Strict Type-Checking Options */
+    "strict": true,
+    "target": "es5"
   },
-  "lib": ["es2015"],
+  "exclude": ["node_modules"],
   "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+  "lib": ["es2015"]
 }

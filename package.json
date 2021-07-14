@@ -1,6 +1,7 @@
 {
   "_moduleAliases": {
     "@helpers": "src/helpers",
+    "@lib": "src/lib",
     "@models": "src/models"
   },
   "author": "",
@@ -10,13 +11,15 @@
     "inquirer": "^8.1.1",
     "module-alias": "^2.2.2",
     "nodemon": "^2.0.12",
-    "prettier": "^2.3.2"
+    "prettier": "^2.3.2",
+    "uuid": "^8.3.2"
   },
   "description": "",
   "devDependencies": {
     "@types/babel__core": "^7.1.15",
     "@types/jest": "^26.0.24",
     "@types/node": "^16.3.1",
+    "@types/uuid": "^8.3.1",
     "@typescript-eslint/eslint-plugin": "^4.28.2",
     "@typescript-eslint/parser": "^4.28.2",
     "eslint": "^7.30.0",
@@ -44,7 +47,7 @@
   "name": "02-todo-list",
   "scripts": {
     "build": "tsc",
-    "start": "nodemon -q",
+    "start": "nodemon -q -I",
     "test": "jest"
   },
   "version": "1.0.0"
